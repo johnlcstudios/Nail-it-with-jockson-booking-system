@@ -34,8 +34,16 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
+const MONGODB_URI = process.env.MONGODB_URI;
 
-mongoose.connect(process.env.MONGODB_URI)
+if (!MONGODB_URI) {
+  console.error('MONGODB_URI environment variable is not set.');
+  console.error('Please set it in your Render dashboard under Environment Variables.');
+  console.error('Example: mongodb+srv://username:password@cluster.mongodb.net/dbname?retryWrites=true&w=majority');
+  process.exit(1);
+}
+
+mongoose.connect(MONGODB_URI)
   .then(() => {
     console.log('Connected to MongoDB');
     app.listen(PORT, () => {
@@ -43,7 +51,7 @@ mongoose.connect(process.env.MONGODB_URI)
     });
   })
   .catch(err => {
-    console.error('MongoDB connection error:', err);
+    console.error('MongoDB connection error:', err.message);
     process.exit(1);
   });
 

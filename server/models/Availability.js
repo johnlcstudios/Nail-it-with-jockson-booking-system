@@ -15,6 +15,4 @@ const availabilitySchema = new mongoose.Schema({
   slotInterval: { type: Number, default: 60 }
 }, { timestamps: true });
 
-availabilitySchema.index({ date: 1 });
-
 module.exports = mongoose.model('Availability', availabilitySchema);

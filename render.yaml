@@ -15,7 +15,7 @@ services:
       - key: ADMIN_USERNAME
         value: admin
       - key: ADMIN_PASSWORD
-        generateValue: true
+        value: JocksonNail2026!
       - key: MESSENGER_PAGE_ID
         value: "100069308407532"
       - key: SMS_ENABLED
