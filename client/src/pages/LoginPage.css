@@ -1,0 +1,35 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--pink-light) 0%, var(--teal-light) 50%, var(--off-white) 100%);
+  padding: 20px;
+}
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+}
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.login-header h1 {
+  font-size: 1.8rem;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+}
+.login-header p {
+  color: var(--gray-500);
+  font-size: 0.9rem;
+}
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.login-btn {
+  width: 100%;
+  margin-top: 8px;
+}
